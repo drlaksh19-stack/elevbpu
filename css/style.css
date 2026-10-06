@@ -6059,3 +6059,23 @@ body.modal-open {
     }
 
 }
+/* =========================================
+   ADMISSION ACTION
+========================================= */
+
+.admission-action {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.admission-button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.admission-action .form-note {
+    display: block;
+    margin-top: 10px;
+}

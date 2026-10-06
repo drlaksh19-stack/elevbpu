@@ -552,3 +552,71 @@ document.addEventListener(
 
     }
 );
+
+/* =========================================
+   PCME ENQUIRY — GMAIL
+========================================= */
+
+const enquiryForm = document.getElementById("enquiry-form");
+
+if (enquiryForm) {
+
+    enquiryForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const studentName =
+            enquiryForm.elements["student-name"].value.trim();
+
+        const parentName =
+            enquiryForm.elements["parent-name"].value.trim();
+
+        const mobile =
+            enquiryForm.elements["mobile"].value.trim();
+
+        const email =
+            enquiryForm.elements["email"].value.trim();
+
+        const message =
+            enquiryForm.elements["message"].value.trim();
+
+        const recipient =
+            "vijayapurvroad@gmail.com";
+
+        const cc =
+            "dr.lakshminarayanakg@bhshes.in";
+
+        const subject =
+            `PCME Admission Enquiry – ${studentName}`;
+
+        const body =
+`Dear Sir/Madam,
+
+I am interested in the PCME combination at Vijaya Bifurcated PU College.
+
+Student Name: ${studentName}
+Parent / Guardian: ${parentName || "Not provided"}
+Mobile Number: ${mobile}
+Email: ${email || "Not provided"}
+
+Enquiry:
+${message || "No specific message provided."}
+
+This enquiry was submitted through the PCME – Electronics website.
+
+Thank you.`;
+
+        const gmailUrl =
+            "https://mail.google.com/mail/?" +
+            "view=cm" +
+            "&fs=1" +
+            "&to=" + encodeURIComponent(recipient) +
+            "&cc=" + encodeURIComponent(cc) +
+            "&su=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+
+        window.open(gmailUrl, "_blank");
+
+    });
+
+}
